@@ -258,51 +258,45 @@ van een rechtsvermoeden</a> <span>https://wetgevingskalender.overheid.nl/Regelin
         </ol> 
         </p>
       </div>
-
-      {/* RIGHT: pinned judge */}
+ {/* Right side: pinned judge
+          Mobile: short container (row) with smaller image
+          Desktop: full height (column) with larger image
+       */}
       <div
         className="
-          md:w-1/3
-          bg-gray-100
-          p-6
-          relative
-          flex
-          flex-col
-          items-center
-          justify-center
+          /* Mobile default: row, short container. */
+          flex flex-row items-center justify-center space-x-4 
+          h-40 w-full fixed bottom-0
 
-          /* Desktop: sticky top-0, fill vertical */
-          md:sticky
-          md:top-0
-          md:h-screen
+          /* Desktop overrides: column, sticky, bigger image, full height. */
+          md:sticky md:top-0 md:h-screen md:flex-col md:space-x-0 md:space-y-4 md:w-1/3
 
-          /* Mobile: fixed bottom-0, full width, ~some chosen height */
-          fixed
-          bottom-0
-          w-full
-          h-56
-          md:h-screen
+          bg-gray-100 p-4
         "
       >
-        <div className="flex flex-col items-center justify-center w-full h-full">
-          <motion.img
-            key={judge.alt}
-            src={judge.src}
-            alt={judge.alt}
-            className="max-w-full max-h-full object-contain"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          />
-          <p className="text-lg font-semibold mt-4 text-gray-800 text-center px-2">
+        <motion.img
+          key={judge.alt}
+          src={judge.src}
+          alt={judge.alt}
+          className="
+            object-contain
+            max-h-full
+            max-w-[40%]
+            md:max-w-[80%]  /* Let it grow bigger on desktop */
+          "
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200, damping: 15 }}
+        />
+
+        <div className="flex flex-col items-center text-center">
+          <p className="text-lg font-semibold text-gray-800 px-2">
             {judge.text}
           </p>
-
-          {/* Show raw WScore, ZOPScore, and RI if you want to see the numeric breakdown */}
-          <div className="mt-4 text-gray-700 text-sm text-center">
+          <div className="mt-4 text-gray-700 text-sm">
             <p>W Score: {WScore.toFixed(1)}</p>
             <p>Z+OP Score: {ZOPScore.toFixed(1)}</p>
-            <p>RI = ZOP - W = {RI.toFixed(1)}</p>
+            <p>RI = {RI.toFixed(1)}</p>
           </div>
         </div>
       </div>
