@@ -186,9 +186,9 @@ export default function JudgeScoringApp() {
   const judge = getJudgeView();
 
   return (
-    <div className="flex flex-col md:flex-row w-screen h-screen">
+    <div className="flex flex-col md:flex-row w-screen h-screen max-w-screen">
       {/* LEFT: scrollable questions */}
-      <div className="flex-1 overflow-y-auto bg-white p-6">
+      <div className="flex-1 overflow-y-auto bg-white p-6 pb-48 md:pb-6">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
           Beoordeel een werkrelatie
         </h1>
@@ -246,19 +246,19 @@ export default function JudgeScoringApp() {
             })}
           </div>
         ))}
-    <p>
-        Bronnen: <br />
-        <ol>
-          <li><a href="https://open.overheid.nl/documenten/1ee9a35b-b8a8-48b5-a3ff-79134b224647/file">Voortgangsbrief werken met en als zelfstandige(n) 27 maart 2025</a> <span>https://open.overheid.nl/documenten/1ee9a35b-b8a8-48b5-a3ff-79134b224647/file</span></li>
-          <li><a href="https://wetgevingskalender.overheid.nl/Regeling/WGK014517/Download/e12fc78d-ac0b-471b-8f65-378f130d439b_1.pdf">Wijziging van Boek 7 van het Burgerlijk Wetboek in verband met het
+        <p className="mt-8">
+          Bronnen: <br />
+          <ol>
+            <li><a href="https://open.overheid.nl/documenten/1ee9a35b-b8a8-48b5-a3ff-79134b224647/file">Voortgangsbrief werken met en als zelfstandige(n) 27 maart 2025</a> <span>https://open.overheid.nl/documenten/1ee9a35b-b8a8-48b5-a3ff-79134b224647/file</span></li>
+            <li><a href="https://wetgevingskalender.overheid.nl/Regeling/WGK014517/Download/e12fc78d-ac0b-471b-8f65-378f130d439b_1.pdf">Wijziging van Boek 7 van het Burgerlijk Wetboek in verband met het
 verduidelijken van wanneer sprake is van werken in dienst van een ander in
 de zin van artikel 610 van Boek 7 van het Burgerlijk Wetboek en het invoeren
 van een rechtsvermoeden</a> <span>https://wetgevingskalender.overheid.nl/Regeling/WGK014517/Download/e12fc78d-ac0b-471b-8f65-378f130d439b_1.pdf</span></li>
-<li><a href="https://github.com/mathijs-b2m/zzp-vbar">Broncode berekening: </a> <span>https://github.com/mathijs-b2m/zzp-vbar</span></li>
-        </ol> 
+            <li><a href="https://github.com/mathijs-b2m/zzp-vbar">Broncode berekening: </a> <span>https://github.com/mathijs-b2m/zzp-vbar</span></li>
+          </ol> 
         </p>
       </div>
- {/* Right side: pinned judge
+      {/* Right side: pinned judge
           Mobile: short container (row) with smaller image
           Desktop: full height (column) with larger image
        */}
