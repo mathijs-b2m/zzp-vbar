@@ -188,7 +188,7 @@ export default function JudgeScoringApp() {
   return (
     <div className="flex flex-col md:flex-row w-screen h-screen max-w-screen">
       {/* LEFT: scrollable questions */}
-      <div className="flex-1 overflow-y-auto bg-white p-6 pb-48 md:pb-6">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden bg-white p-6 pb-48 md:pb-6">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
           Beoordeel een werkrelatie
         </h1>
@@ -268,8 +268,8 @@ van een rechtsvermoeden</a> <span>https://wetgevingskalender.overheid.nl/Regelin
           flex flex-row items-center justify-center space-x-4 
           h-40 w-full fixed bottom-0
 
-          /* Desktop overrides: column, sticky, bigger image, full height. */
-          md:sticky md:top-0 md:h-screen md:flex-col md:space-x-0 md:space-y-4 md:w-1/3
+          /* Desktop overrides: column, sticky, centered content, full height. */
+          md:sticky md:top-0 md:h-screen md:flex-col md:space-x-0 md:space-y-4 md:justify-center md:w-1/3
 
           bg-gray-100 p-4
         "
